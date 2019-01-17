@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Don't Smoke !</title>
+    <link rel="stylesheet" type="text/css" href="clock.css">
+  </head>
 <body style="background: linear-gradient(90deg,rgb(188, 59, 248),rgb(54, 248, 174),rgb(54, 248, 174),rgb(54, 248, 174),rgb(188, 59, 248), rgb(204, 204, 255));">
 
-<canvas id="canvas" width="400" height="400"
-style="margin-top: 8%;margin-left: 36%;background-image: repeating-linear-gradient(rgb(179, 121, 235), rgb(42, 250, 122) 10%, rgb(183, 51, 235) 20%);border-top-left-radius:200px;border-top-right-radius:200px;border-bottom-left-radius:200px;border-bottom-right-radius:200px;">
+<canvas id="canvas" width="400" height="400" class="ooh"
+style="margin-top: 8%;margin-left: 36%;border-top-left-radius:200px;border-top-right-radius:200px;border-bottom-left-radius:200px;border-bottom-right-radius:200px;">
 </canvas>
 
 <script>
@@ -24,7 +28,7 @@ function drawFace(ctx, radius) {
   var grad;
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = 'black';
   ctx.fill();
   grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
   grad.addColorStop(0, '#333');
@@ -35,7 +39,7 @@ function drawFace(ctx, radius) {
   ctx.stroke();
   ctx.beginPath();
   ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-  ctx.fillStyle = '#333';
+  ctx.fillStyle = 'white';
   ctx.fill();
 }
 
@@ -87,6 +91,16 @@ function drawHand(ctx, pos, length, width) {
     ctx.rotate(-pos);
 }
 </script>
+
+<div id="blend">
+  <h1>Don't Smoke Your Time Is Near!</h1>
+  <div id="dash"></div>
+  <div id="smoke">
+    <div class="s"></div>
+    <div class="s"></div>
+    <div class="s"></div>
+  </div>
+</div>
 
 </body>
 </html>
